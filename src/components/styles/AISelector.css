@@ -1,0 +1,27 @@
+.AISelector {
+    font-size: 1.2em;
+    border: none;
+    border-radius: .4em;
+    padding: 10px 20px;
+    background: transparent;
+
+    &:hover {
+        background: #333;
+    }
+
+    > option {
+        background: #242424;
+        font-size: 16px;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+
+    .AISelector:hover {
+        background: #ddd;
+    }
+
+    .AISelector option {
+        background: #ddd;
+    }
+}

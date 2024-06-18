@@ -1,0 +1,123 @@
+.menu {
+    width: 100px;
+    transition: all .2s linear;
+    color: #f0f0f0c0;
+}
+
+.open {
+    width: 30%;
+    max-width: 300px;
+    background: var(--main-dark-color);
+}
+
+.menu header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    > button {
+        background: none;
+        
+        &:hover {
+            background: #cccccc13;
+        }
+    }
+}
+
+.open header {
+    flex-direction: row-reverse;
+    
+    > button {
+        color: #f0f0f0c0;
+    }
+}
+
+.menu ul {
+    display: none;
+}
+
+.open ul {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    list-style: none;
+    overflow-y: auto;
+
+    > li {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        height: 40px;
+        border-radius: .4em;
+        transition: all .2s linear;
+        padding: 10px;
+
+        > span {
+            display: inline-block;
+            width: 150px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+        }
+
+        > i { 
+            opacity: 0;
+            transition: all .2s linear;
+            cursor: pointer;
+        }
+
+        > i:hover {
+            color: #f00;
+        }    
+
+        &:hover {
+            background-color: var(--main-color);
+        }
+
+        &:hover > i {
+            opacity: 1;
+        }
+    }
+
+    > .newChat {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .menu {
+        position: absolute;
+        z-index: 2;
+        width: 0px;
+        height: 100%;
+
+        > header > button {
+            position: absolute;
+            top: 20px;
+        }
+
+        > ul {
+            margin-top: 80px;
+        }
+    }
+    
+    .open {
+        position: absolute;
+        width: 250px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section form {
+        width: 80%;
+    }
+}
